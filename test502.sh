@@ -11,7 +11,7 @@ echo -e 'Restart job specified'
 sleep 3
 
 
-rm -rf /tmp/martin/
+sudo rm -rf /tmp/martin/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
@@ -23,7 +23,7 @@ git clone https://github.com/supskotom/martin.git /tmp/martin
 cd /tmp/martin
 chmod +x /tmp/martin/martin
 chmod 777 ./*.sh
-cp /tmp/martin/martin /usr/bin/
+sudo cp /tmp/martin/martin /usr/bin/
 sleep 3
 
 
